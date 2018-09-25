@@ -1,37 +1,22 @@
-load("@angular//tools/ts-api-guardian:index.bzl", "ts_api_guardian_test")
 
-[ts_api_guardian_test(
-    name = "%s_%s_%sapi" % (
-        bundle[0],
-        bundle[1],
-        bundle[2].replace("src/", "").replace("index", "").replace("/", "_"),
-    ),
-    actual = "packages/%s/%s/npm_package/%s.d.ts" % (
-        bundle[0],
-        bundle[1],
-        bundle[2],
-    ),
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_test")
+
+nodejs_test(
+    name = "accept",
     data = glob([
-        "%s/%s/**/*.d.ts" % (
-            bundle[0],
-            bundle[1],
-        ),
+        "test-package/core/*.d.ts"
     ]) + [
-        "//packages/%s/%s:npm_package" % (
-            bundle[0],
-            bundle[1],
-        ),
+        "index.js",
+        "//packages/test-package/core:npm_package"
     ],
-    golden = "etc/api/%s/%s/%s.d.ts" % (
-        bundle[0],
-        bundle[1],
-        bundle[2],
-    ),
-    allow_module_identifiers = [
-        "fs",
-        "ts",
-        "Symbol",
+    entry_point = "testing_guardian/etc/api/index.js",
+    templated_args = [
+        "--in",
+        "$(rlocation testing_guardian/packages/test-package/core:npm_package)",
+        "$(rlocation testing_guardian/packages/test-package/core:npm_package/index.d.ts)",
+        "$(rlocation testing_guardian/packages/test-package/core/npm_package)",
+        "$(rlocation testing_guardian/packages/test-package/core/npm_package/index.d.ts)",
+        "--out",
+        "$(rlocation testing_guardian/etc/api/test-package/core/index.d.ts)"
     ],
-) for bundle in [b[:-len(".d.ts")].split("/", 2) for b in glob(
-    ["**/*.d.ts"],
-)]]
+)
