@@ -1,5 +1,4 @@
 
-Related to https://github.com/bazelbuild/rules_nodejs/issues/325
 
 ### Steps
 ```
