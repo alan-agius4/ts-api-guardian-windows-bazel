@@ -12,8 +12,6 @@ nodejs_test(
     entry_point = "testing_guardian/etc/api/index.js",
     templated_args = [
         "--in",
-        "$(rlocation testing_guardian/packages/test-package/core:npm_package)",
-        "$(rlocation testing_guardian/packages/test-package/core:npm_package/index.d.ts)",
         "$(rlocation testing_guardian/packages/test-package/core/npm_package)",
         "$(rlocation testing_guardian/packages/test-package/core/npm_package/index.d.ts)",
         "--out",

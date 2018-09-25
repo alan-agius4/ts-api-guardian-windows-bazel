@@ -7,6 +7,10 @@ npm i
 bazel test //etc/api/...
 ```
 
+In the manifest file I can see that there is an entry for 
+```
+testing_guardian/packages/test-package/core/npm_package C:/users/alag/_bazel_alag/qxvail6p/execroot/testing_guardian/bazel-out/x64_windows-fastbuild/bin/packages/test-package/core/npm_package
+```
 
 ### Log files contents
 ```txt
