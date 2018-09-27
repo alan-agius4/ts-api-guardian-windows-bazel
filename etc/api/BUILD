@@ -13,7 +13,6 @@ nodejs_test(
     templated_args = [
         "--in",
         "$(rlocation testing_guardian/packages/test-package/core/npm_package)",
-        "$(rlocation testing_guardian/packages/test-package/core/npm_package/index.d.ts)",
         "--out",
         "$(rlocation testing_guardian/etc/api/test-package/core/index.d.ts)"
     ],
