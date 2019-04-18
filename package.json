@@ -8,14 +8,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@bazel/bazel": "^0.24.1",
+    "@bazel/bazel": "0.22.0",
     "@bazel/jasmine": "^0.27.12",
-    "ts-api-guardian": "0.4.2-beta.0"
+    "ts-api-guardian": "C:/users/alag/_bazel_alag/3tbqurya/execroot/angular/bazel-out/x64_windows-fastbuild/bin/tools/ts-api-guardian/ts-api-guardian"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@bazel/typescript": "0.27.12",
+    "@bazel/typescript": "^0.24.1",
     "typescript": "^3.0.3"
   }
 }
