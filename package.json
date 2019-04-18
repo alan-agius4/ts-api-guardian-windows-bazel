@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "bazel": "bazel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@bazel/bazel": "^0.24.1",
+    "@bazel/jasmine": "^0.27.12",
+    "ts-api-guardian": "0.4.2-beta.0"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@bazel/typescript": "0.16.1",
+    "@bazel/typescript": "0.27.12",
     "typescript": "^3.0.3"
   }
 }
